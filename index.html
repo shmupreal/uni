@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Я Даниил Дробитько</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Даниил Дробитько</h1>
+  <p> Lorem ipsum dolor sit amet consectetur.</p>
+</header>
+
+<main>
+  <section>
+    <h2>Обо мне</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum neque aut eligendi incidunt nesciunt </p>
+  </section>
+
+  <section>
+    <h2>Мои хобби</h2>
+    <ul>
+      <li>Программирование</li>
+      <li>Чтение</li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Хобби</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>Программирование</td>
+        <td>Lorem ipsum dolor sit amet consectetur.</td>
+      </tr>
+      <tr>
+        <td>Чтение</td>
+        <td>Lorem ipsum, dolor sit amet consectetur adipisicing.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Форма обратной связи</h2>
+    <form onsubmit="event.preventDefault(); document.getElementById('msg').style.display='block';">
+      <input type="text" placeholder="Ваше имя" required>
+      <input type="tel" placeholder="Номер телефона" required>
+      <button type="submit">Отправить</button>
+    </form>
+    <div id="msg" class="message">Мы с вами свяжемся!</div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Даниил Дробитько</p>
+</footer>
+
+</body>
+</html>
