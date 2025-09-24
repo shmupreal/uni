@@ -1,0 +1,178 @@
+:root{
+    --bg: #111111;            
+    --panel: #1c1c1c;         
+    --panel-muted: #181818;   
+    --stroke: #2a2a2a;        
+    --text: #f5f5f5;          
+    --muted: #9a9a9a;         
+    --accent: #2563eb;        
+    --accent-press: #1e4fc4;
+    --chip: #2a2a2a;          
+    --chip-text: #bbbbbb;     
+    --radius-xl: 18px;
+    --radius-md: 12px;
+    --radius-sm: 10px;
+    --shadow: 0 8px 28px rgba(0,0,0,0.6);
+    --shadow-soft: 0 4px 16px rgba(0,0,0,0.4);
+    --sidebar-width: 360px;
+    font-synthesis-weight: none;
+  }
+  
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body{
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+  }
+  
+  .app{
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 32px;
+  }
+  
+  .frame{
+    width: min(1100px, 96vw);
+    background: var(--panel);
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    overflow: hidden;
+  }
+  
+  .panel--sidebar{
+    background: var(--panel-muted);
+    border-right: 1px solid var(--stroke);
+    padding: 28px;
+  }
+  .brand{
+    margin: 0 0 16px;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    color: var(--text);
+  }
+  .section-title{
+    margin: 28px 0 12px;
+    font-size: 18px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .btn{
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .btn--primary{
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 14px;
+    box-shadow: var(--shadow-soft);
+    transition: transform .04s ease, background .15s ease;
+  }
+  .btn--primary:active{ transform: translateY(1px); background: var(--accent-press); }
+  
+  .tag-list{
+    display: grid;
+    gap: 6px;
+  }
+  .tag-item{
+    text-align: left;
+    width: 100%;
+    padding: 12px 14px;
+    background: transparent;
+    border-radius: 10px;
+    border: 0;
+    color: var(--text);
+    font-size: 15px;
+  }
+  .tag-item:hover{ background: #2a2a2a; box-shadow: 0 2px 10px rgba(0,0,0,.4); }
+  .tag-item--active{ background: #1e40af; color:#fff; }
+  
+  .panel--main{
+    padding: 22px;
+  }
+  .toolbar{ display:flex; justify-content:flex-end; margin-bottom: 16px; }
+  
+  .searchbar{
+    display: flex;
+    gap: 10px;
+  }
+  .searchbar__input{
+    height: 42px;
+    width: min(480px, 60vw);
+    padding: 0 14px;
+    border-radius: 12px;
+    border: 1px solid var(--stroke);
+    outline: none;
+    font-size: 15px;
+    background: #0f0f0f;
+    color: var(--text);
+  }
+  .searchbar__input::placeholder{ color: #666; }
+  .searchbar__button{
+    height: 42px;
+    width: 42px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--accent);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .notes{
+    display: grid;
+    gap: 16px;
+  }
+  .note-card{
+    border: 1px solid var(--stroke);
+    border-radius: 14px;
+    padding: 18px 18px 16px;
+    background: #1a1a1a;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.5);
+  }
+  .note-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom: 12px;
+  }
+  .note-title{
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .badge{
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--chip-text);
+    border: 1px solid var(--stroke);
+  }
+  .note-meta{
+    color: var(--muted);
+    font-size: 14px;
+  }
+  
+  @media (max-width: 880px){
+    .frame{ grid-template-columns: 1fr; }
+    .panel--sidebar{ border-right: 0; border-bottom: 1px solid var(--stroke); }
+    .toolbar{ justify-content: stretch; }
+    .searchbar{ width: 100%; }
+    .searchbar__input{ width: 100%; }
+  }
+  
